@@ -1,0 +1,166 @@
+/*
+==========================================
+16. pricing
+==========================================
+*/
+
+.pricing_title {
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 46px;
+    @include mq(xs){
+        font-size: 25px;
+        line-height: 1.4;
+    }
+    @include mq(sm){
+        font-size: 28px;
+        line-height: 1.4;
+    }
+}
+.pricing {
+	border-radius: 10px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 30px 70px 0px rgba(3, 15, 44, 0.08);
+	padding: 40px 57px;
+    position: relative;
+    @include transition(.3s);
+    border: 2px solid transparent;
+    &__header{
+        text-align: center;
+        & h4{
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        & h2{
+            font-size: 40px;
+            line-height: 26px;
+            font-weight: 600;
+            color: #ffaa45;
+            margin-bottom: 10px;
+            padding-bottom: 0;
+        }
+    }
+    &__content{
+        padding-top: 30px;
+        & ul{
+            & li{
+                font-size: 14px;
+                margin-bottom: 20px;
+                color: #4f5c5f;
+                & i{
+                    padding-right: 18px;
+                    color: #09c185;
+                }
+                @include mq(xs){
+                    font-size: 12px;
+                    
+                }
+                @include mq(sm){
+                    font-size: 18px;
+                    
+                }
+            }
+        }
+    }
+    &__footer{
+        text-align: center;
+        margin-top: 40px;
+        a{
+            display: inline-block;
+            text-decoration: none;
+            color: #ff4f5a;
+            border: 1px solid #ff4f5a;
+            padding: 15px 30px;
+            @include transition(.3s);
+            border-radius: 4px;
+            &:hover{
+                background: #ff4f5a;
+                border: 1px solid transparent;
+                color: #fff;
+                @include transition(.3s);
+                border-radius: 4px;
+                background-color: rgb(255, 79, 90);
+                box-shadow: 0px 20px 40px 0px rgba(255, 79, 90, 0.16);
+            }
+        }
+    }
+    &:hover{
+        border: 2px solid #f59aa0;
+        z-index: 99;
+        @include transition(.3s);
+        border-radius: 4px;
+        box-shadow: 0px 20px 40px 0px rgba(255, 79, 90, 0.11);
+    }
+    @include mq(lg){
+        padding: 40px 40px;
+    }
+}
+.pricing::before {
+	position: absolute;
+	content: "";
+	height: 166px;
+	width: 166px;
+	background: #feefde;
+	left: -2px;
+	top: 0;
+	clip-path: ellipse(37% 40% at 0% 27%);
+}
+
+.design1 {
+    position: relative;
+    content: "";
+  }
+  .design1::before {
+    position: absolute;
+    content: "";
+    height: 116px;
+    width: 116px;
+    background: #fee5e7;
+    top: 13%;
+    clip-path: ellipse(37% 40% at 0% 48%);
+    left: -4px;
+  }
+  
+.design2 {
+    position: relative;
+  }
+  .design2::before {
+    position: absolute;
+    content: "";
+    height: 102px;
+    width: 123px;
+    background: #ebecfe;
+    clip-path: ellipse(37% 40% at 52% 0%);
+    top: -2px;
+    left: 0%;
+  }
+  .pricing-area {
+	@include mq(xs){
+        padding-top: 41px;
+    }
+}
+.footer-area.servicefooter.pricing-footer {
+	@include mq(xs){
+        padding-top: 50px;
+        margin-top: 0px;
+    }
+}
+.pricing {
+    :is(.orange){
+        @include ptitlecolor($orange);
+    }
+    :is(.lightcolor){
+        @include ptitlecolor1($lightcolor);
+    }
+}
+.price-1 {
+  top: 360px;
+}
+.price-2 {
+  top: 522px;
+  left: 34px;
+}
+.price-3 {
+  right: 50px;
+  bottom: 300px;
+}

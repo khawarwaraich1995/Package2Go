@@ -1,0 +1,1 @@
+[{"template_name":"Forgot Password","template_slug":"forgotPassword","template_description":null,"template_type":"markdown","template_view_name":"postmark","template_skeleton":"reset-password"},{"template_name":"WelcomeEmail","template_slug":"welcomeEmail","template_description":null,"template_type":"markdown","template_view_name":"postmark","template_skeleton":"welcome"}]

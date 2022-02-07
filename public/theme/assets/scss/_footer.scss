@@ -1,0 +1,229 @@
+/*
+==========================================
+9. footer
+==========================================
+*/
+
+/*
+=============================
+HOME PAGE 1 FOOTER DESIGN
+=============================
+*/
+.footer-area{
+        background: #f9fdfa;
+        padding-top: 210px;
+        margin-top: -130px;
+    & li{
+        margin-bottom: 10px;
+        & a{
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            &:hover{
+                color: $themegreen;
+            }
+        }
+    }
+    & i {
+        margin-right: 10px;
+        color: $themegreen;
+    }
+    @include mq(md){
+        padding-top: 200px;
+    }
+
+}
+
+.footer_design{
+    display: flex;
+    width: 100%;
+}
+.footer_logo {
+    margin-right: 70px;
+    @include mq(lg){
+        margin-right: 0;
+    }
+}
+.copyright_text .colorblue{
+    color: $themeblue;
+}
+.copyright_text .colorlightblue{
+    color: $lightblue;
+}
+.links.special_widget_tp {
+    margin-left: -66px;
+    @include mq(md){
+    margin-left: 0;
+    width: 200px;
+    }
+    @include mq(xs){
+        margin-left: 0;
+    }
+}
+.link_heading.linkspecail {
+    margin-left: -65px;
+    @include mq(md){
+        margin-left: 0;
+        font-size: 18px;
+    }
+    @include mq(xs){
+        margin-left: 0;
+    }
+}
+.footer_widget_design {
+	margin-bottom: 44px;
+}
+.link_heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    @include mq(xs){
+        padding-top: 20px;
+    }
+}
+.footer_widget_design.fixwidth {
+	@include mq(md){
+        width: 200px;
+    }
+}
+.container.tp-border {
+    border-top: 1px solid #e4ecee;
+}
+.copyright_text{
+    & p{
+      & span{
+        color: $themegreen;
+      }  
+    }
+    
+}
+.footer_social {
+    & a{
+         padding-left: 22px;
+         & i{
+             color: #95a0ae
+         }
+         &:hover{
+             color: $themegreen;;
+         }
+     }
+     
+ }
+.copyright_text p {
+	@include mq(md){
+        font-size: 14px;
+    }
+}
+.footer_social{
+    & a{
+        & i{
+            @include transition(.3s);
+            &:hover{
+                color: $themegreen;
+                @include transition(.3s);
+            }
+        }
+    }
+}
+
+
+/*
+=============================
+HOME PAGE 2 FOOTER DESIGN
+=============================
+*/
+.footer2{
+    background: #fff;
+    margin-top: 0;
+    padding-top: 100px;
+}
+.footer_widget_design.widget1 {
+	margin-right: 158px;
+    & p{
+        font-size: 15px;
+        & span{
+            color: $lightblue;
+        }
+    }
+}
+.follow {
+	padding-top: 17px;
+    & span{
+        margin-right: 22px;
+    }
+    & a{
+        margin-right: 10px;
+        & i{
+            color: #95a0ae;
+        }
+        & :hover{
+            color: $lightblue;
+        }
+    }
+}
+.footer_border_shape {
+	border: 1px solid #e4ecee;
+	margin-bottom: 15px;
+}
+.footerbg2{
+    background: #f9fdfa;
+    padding-top: 82px;
+    margin-top: 100px;
+}
+.footer-area.padding-remove {
+	margin-top: 0;
+}
+/*
+=============================
+HOME PAGE 3 FOOTER DESIGN
+=============================
+*/
+.footerbg3{
+    background: #fafdff;
+    padding-top: 80px;
+}
+.footerbg3{
+    & li{
+        & a{
+            &:hover{
+                color: $themeblue;
+            }
+        }
+    }
+}
+.copyclr3{
+    & p{
+        & span{
+            color: $themeblue;
+        }
+    }
+}
+.footer-area.padding-remove {
+	padding-top: 80px;
+}
+/*
+=============================
+SERVICE FOOTER DESIGN
+=============================
+*/
+
+.footer-area.servicefooter{
+    margin-top: 13px;
+}
+
+/*
+=============================
+CONTACT FOOTER DESIGN
+=============================
+*/
+
+.footer-area.servicefooter.contactfooter {
+	padding-top: 90px;
+	margin-top: -15px;
+}
+.footertext-hover{
+    @include footertextcolor($lightblue);
+}
+.footertext-hover2{
+    @include footertextcolor($themeblue);
+}

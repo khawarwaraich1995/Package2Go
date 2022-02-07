@@ -1,0 +1,39 @@
+name: Settings
+description: |-
+
+  API endpoints for fetching settings.
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/settings
+    metadata:
+      title: 'Project Settings Endpoint'
+      description: 'This endpoint allows you to get default settings of the project.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+                "status": true,
+                "message": "Driver location has been updated!!"
+            }
+        headers: []
+        description: '200'
+      -
+        status: 401
+        content: |-
+          {
+                 "message": "Unauthenticated."
+           }
+        headers: []
+        description: '401'
+    responseFields: []

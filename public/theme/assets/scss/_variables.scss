@@ -1,0 +1,38 @@
+// Font Family
+$poppins: 'Poppins', sans-serif;
+
+//font-size
+$bodyfontsize:16px;
+
+// Colors ---------------
+$white: #ffffff;
+$black: #222;
+$grey:#f7f7fd;
+$theme-color: #f00;
+$body-text-color: #565c64;
+$hr-border-color:#eceff8;
+
+
+
+// Heading Color
+$heading-color: #132339;
+
+//sub heading color
+$subheading-color:#081e39;
+
+// background color
+$black-soft:#f9fdfa;
+
+$themeblue:#583bf7;
+$themegreen:#19cb55;
+$lightblue:#3694f5;
+$lightcolor:#7162fd;
+$orange:#ff4f5a;
+
+// Responsive Variables
+$laptop: 'only screen and (min-width: 1200px) and (max-width: 1600px)';
+$lg : 'only screen and (min-width: 992px) and (max-width: 1200px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$xs:'(max-width: 767px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+

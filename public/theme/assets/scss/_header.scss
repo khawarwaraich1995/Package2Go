@@ -1,0 +1,740 @@
+/*
+==========================================
+3. header
+==========================================
+*/
+
+
+/*
+=============================
+HOME PAGE 1 HEADER DESIGN
+=============================
+*/
+.transparent-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+}
+.main-menu{
+    margin-left: 78px;
+    & ul{
+        & li{
+            float: left;
+            margin-right: 45px;
+            position: relative;
+            &:hover .submenu{
+                top: 100%;
+                visibility: visible;
+                opacity: 1;
+            }
+            & a{
+                color: $heading-color;
+                font-size: $bodyfontsize;
+                text-decoration: none;
+                padding: 25px 0px;
+                display: inline-block;
+                font-size: 16px;
+                &:hover{
+                    color: $themegreen;
+                }
+            }
+            @include mq(lg) {
+                margin-right: 25px;
+            }
+        }
+    }
+}
+.main-menu.colormenu {
+    & ul{
+        & li{
+            .submenu{
+                & a{
+                    color: #000;
+                }
+            }
+
+        }
+    }
+	
+}
+.main-menu ul li .submenu li{
+    padding: 5px;
+    margin-right: 0;
+    padding: 5px;
+    margin-right: 0;
+    display: block;
+    float: none;
+}
+.side-menu-icon{
+    @include mq(lg){
+        display: none;
+    }
+    @include mq(xl){
+        display: none;
+    }
+    @include mq(xll){
+        display: none;
+    }
+}
+.main-menu ul li .submenu li a{
+    padding: 0;
+    display: inline-block;
+}
+.main-menu ul li .submenu{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    min-width: 200px;
+    padding: 15px 17px;
+    background: #ffffff;
+    border-top: 4px solid $themegreen;
+    z-index: 11;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(.3s);
+    box-shadow: 0 0 60px 0 rgb(0 0 0 / 7%);
+    & li{
+        position: relative;
+        display: block;
+        
+        & a {
+            position: relative;
+            padding-bottom: 5px;
+           &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: $themegreen;
+                content: "";
+                @include transition(.3s);
+           }
+           &:hover::before{
+            width: 100%;
+            @include transition(.3s);
+        }
+        }
+    }
+}
+
+
+.btn {
+	background: $themegreen;
+	padding: 9px 27px;
+	color: #fff;
+    border-radius: 4px;
+    @include transition(.3s);
+    &:hover{
+        color: #fff;
+    }
+    & i {
+        margin-right: 10px;
+    }
+    &:hover {
+        background: transparent;
+        border: 1px solid $themegreen;
+        color: #000;
+        @include transition(.3s);
+    }
+}
+.btn.btnblue {
+	background: $themeblue;
+    &:hover{
+        color: #fff;
+        background: transparent;
+        color: #583bf7;
+        border: 1px solid #583bf7;
+    }
+}
+.main-menu ul li .submenu li .submenu{
+    position: absolute;
+    left: 182px;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+    top: 0px;
+    @include transition(.3s);
+}
+.main-menu ul li .submenu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    @include transition(.3s);
+}
+.app_slider{
+    min-height: 950px;
+    background: #f9fdfa;
+    width: 100%;
+    position: relative;
+    padding-top: 216px;
+    padding-bottom: 80px;
+    @include mq(xs){
+        padding-top: 100;
+        min-height: 500px;
+    }
+    @include mq(md){
+        min-height: 0;
+        padding-top: 100px;
+    }
+    @include mq(lg){
+        min-height: 0;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    @include mq(xl){
+        min-height: auto;
+    }
+}
+.features.feturesCommon.wow.fadeInUp {
+	@include mq(lg){
+        padding-left: 0px;
+    }
+}
+.side-menu-icon.bar-three i{
+    color: $themeblue;
+}
+.app_image {
+	@include mq(md){
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+}
+.shape10 {
+    position: absolute;
+    left: 6%;
+    top: 68%;
+}
+.shape13 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.App_shape{
+    position: relative;
+}
+.App_shape img {
+    max-width: none;
+    margin-left: -127px;
+    margin-top: 0;
+}
+.shapeAbsoulute {
+position: absolute;
+bottom: 95px;
+animation: pulse infinite 2s linear;
+left: 460px;
+bottom: 93px;
+@include mq(xxl){
+    left: 250px;
+}
+@include mq(xl){
+    left: 160px;
+}
+@include mq(md){
+    left: 160px;
+}
+@include mq(lg){
+    left: 160px;
+}
+@include mq(sm){
+    left: 50px;
+}
+
+}
+.footer-area .footer_design {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+    @include mq(xs){
+        flex-direction: column;
+        text-align: left;
+        padding: 0;
+        margin:0;
+    }
+    @include mq(sm){
+        text-align: left;
+    }
+
+}
+.f-right {
+	float: right;
+    @include mq(xs){
+        float: left;
+    }
+}
+.app_sliderContent{
+    padding-left: 126px;
+    position: relative;
+    
+    & h2{
+        position: relative;
+        @include mq(md){
+            font-size: 30px;
+            line-height: 1.4;
+        }
+        @include mq(sm) {
+
+        }
+        @include mq(xs) {
+            font-size: 30px;
+            line-height: 1.4;
+            padding-right: 0;
+        }
+    }
+    & p{
+            margin-bottom: 50px;
+            @include mq(md){
+                margin-right: 0px;
+            }
+            @include mq(xs){
+                margin-right: 0;
+            }
+    }
+   
+    @include mq(xs){
+        padding-left: 0;
+    }
+
+}
+.app_left_shape {
+    position: absolute;
+    left: 0;
+    top: 1362px;
+}
+.downsahpe {
+	position: absolute;
+	top: 825px;
+	left: 1750px;
+    @include mq(xxl){
+        left: 1400px;
+    }
+    @include mq(xl){
+        left: 1000px;
+    }
+    @include mq(lg){
+        left: 927px;
+    }
+    @include mq(md){
+        left: 692px;
+    }
+    @include mq(sm){
+        left: 200px;
+    }
+}
+.btn-outline{
+    padding: 12px 48px;
+    border: 1px solid $themegreen;
+    border-radius: 5px;
+    text-decoration: none;
+    display:inline-block;
+    &:hover {
+        background: $themegreen;
+        color: #fff;
+    }
+}
+.shape1{
+position: absolute;
+right: -250px;
+top: -80px;
+animation: animationFramesTwo 30s alternate infinite linear;
+}
+.shape2{
+position: absolute;
+right: -127px;
+top: 128px;
+animation: zoomIn 5s alternate infinite linear;
+}
+.shape3{
+position: absolute;
+right: -250px;
+top: 320px;
+}
+.shape4{
+position: absolute;
+top: -124px;
+left: 256px;
+}
+.shape5{
+position: absolute;
+top: -132px;
+left: 291px;
+animation: animationFramesTwo 30s alternate infinite linear;
+}
+.shape6{
+position: absolute;
+right: 123px;
+top: -220px;
+animation: fadeInLeft 2s alternate infinite linear;
+}
+.shape7{
+position: absolute;
+left: -72px;
+top: 132px;
+animation: animationFramesTwo 30s alternate infinite linear;
+}
+.shape8 {
+position: absolute;
+top: 464px;
+left: 445px;
+animation: animationFramesTwo 30s alternate infinite linear;
+}
+.shape9 {
+position: absolute;
+top: 493px;
+left: 630px;
+}
+.shape11 {
+position: absolute;
+top: 394px;
+left: 504px;
+@include mq(xs){
+    left: 0px;
+    
+}
+}
+
+//left shape animation
+.leftanimation {
+	animation: pulse 2s infinite linear;
+}	
+.header-btn.f-right.d-none.d-sm-block {
+	@include mq(sm){
+        margin-right: 10px;
+    }
+    @include mq(md){
+        margin-right: 44px;
+    }
+}
+/*
+=============================
+HOME PAGE 2 HEADER DESIGN
+=============================
+*/
+.btn.h2_btn {
+	background: #fff;
+	color: $lightblue;
+}
+.home2{
+    ul{
+        li{
+            a{
+                color: #fff;
+            }
+        }
+    }
+
+}
+.logo2{
+    position: absolute;
+    z-index: 99;
+}
+.fetures2.pt-115.pb-90 {
+	@include mq(xs){
+        padding-top: 45px;
+        padding-bottom: 0;
+    }
+}
+.app_choose.pt-115.mt-130.pb-160 {
+    @include mq(xs){
+        padding-top: 50px;
+        margin-top: 60px;
+    }
+}
+.home2_title{
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    font-family: poppins;
+    line-height: 60px;
+    padding-bottom:10px;
+    @include mq(xs){
+        font-size: 36px;
+        line-height: 1.4;
+    }
+}
+.tp_white_border{
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 12px 48px;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    &:hover{
+        background: #fff;
+        color: $body-text-color;;
+    }
+}
+.btn.btn-white {
+	background: #fff;
+	color: $heading-color;
+    border: 1px solid transparent;
+    color: $lightblue;
+    @include transition(.3s);
+    &:hover{
+        background: $lightblue;
+        border: 1px solid #fff;
+        color: #fff;
+        @include transition(.3s);
+    }
+}
+.side-menu-icon.bar-two i{
+    color: #fff;
+}
+.slider_2{
+    min-height: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content{
+        padding-top: 71px;
+        @include mq(xs){
+            padding-top: 0;
+        }
+    }
+    & P{
+        color: #fff;
+        font-size: 16px;
+        line-height: 26px;
+        padding-bottom: 45px;
+        opacity: .7;
+    }
+    @include mq(xs){
+        min-height: 600px;
+        padding-top: 163px;
+    }
+}
+.side-menu-icon i {
+	color: green;
+}
+.slider_2__content {
+    padding-top: -40%;
+    position: relative;
+    z-index: 2;
+    @include mq(sm){
+        margin-top: -13%;
+    }
+    @include mq(xs){
+        padding-bottom: 76px;
+    }
+}
+.slider_2_image {
+    display: flex;
+    justify-content: end;
+}
+.home2_shapes img {
+    position: absolute;
+    right: 11%;
+    top: 35%;
+}
+.h2_love {
+    animation: pulse 2s infinite linear;
+}
+.H2_iphonex {
+    position: absolute;
+    animation: float-bob-y 2s infinite linear;
+    top: 206px;
+}
+.download_content .section-title {
+	font-size: 36px;
+}
+.h2_shape4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.h2_sh_1 {
+    position: absolute;
+    left: 0;
+    top: 24%;
+    animation: pulse 2s infinite linear;
+    z-index: 3;
+}
+.h2_sh_2 {
+    position: absolute;
+    left: 16%;
+    top: 15%;
+    animation: rotated 10s infinite linear;
+    z-index: 3;
+}
+.h2_sh_3 {
+    left: 39%;
+    position: absolute;
+    top: 20%;
+}
+.h2_sh_4 {
+    position: absolute;
+    top: 14%;
+    left: 53%;
+}
+
+.h2_sh_6 {
+    position: absolute;
+    right: 7%;
+    bottom: 10%;
+    animation: flash 10s infinite linear;
+}
+.h2_sh_5 {
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    animation: flash 5s infinite linear;
+}
+
+.main-menu.d-block.colorblack{
+    & li{
+        & .submenu {
+            & ul{
+                & li{
+                    & a{
+                        color: #000;
+                    }
+                }
+            }
+        }
+        & a{
+            color: #000;
+        }
+    }
+}
+.submenu.colorblack{
+    & li{
+        & a{
+            color: #000;
+        }
+    }
+}
+/*
+=============================
+HOME PAGE 3 HEADER DESIGN
+=============================
+*/
+.app_slider.app_slider_3 {
+	@include mq(xs){
+        padding-top: 100px;
+    }
+}
+.btn.h3_btn {
+	border-radius: 4px;
+	background-color: rgb(88, 59, 247);
+}
+.home3{
+    ul{
+        li{
+            a{
+                color: $heading-color;
+                &:hover{
+                    color: $themeblue;
+                }
+            }
+        }
+    }
+
+}
+.logo2{
+    position: absolute;
+    z-index: 99;
+}
+
+.slider3 {
+	padding: 0;
+}
+
+.footer_logo {
+    position: relative;
+  }
+  .footer_logo:before {
+    position: absolute;
+    content: "";
+    background-image: url("../img/shape/dotshapes.png");
+    top: -41px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+  }
+  .footer_logo img {
+    position: relative;
+    z-index: 9;
+  }
+.btn-outline3{
+    padding: 12px 48px;
+    border: 1px solid $themeblue;
+    border-radius: 5px;
+    text-decoration: none;
+    &:hover {
+        background: $themeblue;
+        color: #fff;
+    }
+}
+.slider3_main_image {
+    position: absolute;
+    right: 0;
+    top: 18%;
+    @include mq(xxl){
+        right: -80px;
+    }
+    & img{
+        max-width: 87%;
+    }
+}
+.app_sliderContent.slider3 {
+    padding-top: 160px;
+    @include mq(xs){
+        padding-top: 70px;
+    }
+    @include mq(xl){
+        padding-top: 0;
+    }
+}
+.copyright_text p {
+	@include mq(xs){
+        font-size: 16px;
+    }
+}
+.footer_bottom {
+	@include mq(xs){
+        padding-top: 4px;
+    }
+}
+.hero-two-title {
+	font-size: 50px;
+	font-weight: 900;
+}
+.logo {
+	& img{
+        max-width: inherit;
+    }
+}
+
+.header-btn {
+	margin-top: 14px;
+}
+.header-area-white .main-menu.colormenu ul li a {
+	color: #fff;
+}
+.main-menu.colormenu.d-block ul li .submenu li a {
+	color: #000;
+}
+.header-area {
+    &:is(.header-area-white) {
+        @include subMenuBorderColor($themeblue);
+    }
+    &:is(.header-area-orange) {
+        @include subMenuBorderColor($lightblue);
+    }
+    &:is(.font-color){
+        @include menucolor($white);
+    }
+}
+
+.header-area{
+    :is(.whitebg){
+        @include changebtnbg($white);
+    }
+}
+.p-rel {
+    position: relative;
+}

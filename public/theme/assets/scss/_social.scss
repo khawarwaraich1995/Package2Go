@@ -1,0 +1,75 @@
+/*
+==========================================
+14. social
+==========================================
+*/
+
+.share {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 6px 0px rgba(0, 15, 36, 0.1);
+	display: flex;
+    padding: 26px 25px;
+    cursor: pointer;
+    @include transition(.3s);
+    &__content{
+        margin-left: 18px;
+        & h4{
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            @include transition(.3s);
+        }
+        & span{
+            font-size: 16px;
+            color: #565c64;
+        }
+    }
+    &__more{
+        margin-left: 45px;
+
+    }
+    &:hover h4 {
+        color: $themeblue;
+        @include transition(.3s);
+    }
+    &:hover i {
+        color: $themeblue;
+    }
+    &:hover{
+        transform: translateX(-5px);
+        @include transition(.3s);
+    }
+}
+.social_sub{
+    text-align: center;
+}
+.section_title_wrapper.mb-80.text-center.mt-115 {
+	@include mq(xs){
+        margin-top: 50px;
+    }
+}
+.social_share.mb-170 {
+	@include mq(xs){
+        margin-bottom: 0;
+    }
+}
+.social_share {
+	@include mq(xs){
+        margin-bottom: 50px;
+    }
+}
+.p-custom-rel {
+	@include mq(xl) {
+		position: relative !important;
+	}
+	@include mq(lg) {
+		position: relative !important;
+	}
+	@include mq(md) {
+		position: relative !important;
+	}
+	@include mq(sm) {
+		position: relative !important;
+	}
+}

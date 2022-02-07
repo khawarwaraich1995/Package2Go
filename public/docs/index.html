@@ -1,0 +1,4438 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Package 2 Day</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+                    body .content .php-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://pkg2day.com";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.19.1.js"></script>
+
+    <script src="../docs/js/theme-default-3.19.1.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="client-addresses">
+                    <a href="#client-addresses">Client Addresses</a>
+                </li>
+                                    <ul id="tocify-subheader-client-addresses" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="client-addresses-POSTapi-v1-client-store-address">
+                        <a href="#client-addresses-POSTapi-v1-client-store-address">Add new address Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-addresses-GETapi-v1-client-get-addresses">
+                        <a href="#client-addresses-GETapi-v1-client-get-addresses">Get Customer address Endpoint</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-3" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="client-authentication">
+                    <a href="#client-authentication">Client Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-client-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="client-authentication-POSTapi-v1-client-register">
+                        <a href="#client-authentication-POSTapi-v1-client-register">Register Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-authentication-POSTapi-v1-client-login">
+                        <a href="#client-authentication-POSTapi-v1-client-login">Login Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-authentication-POSTapi-v1-client-logout">
+                        <a href="#client-authentication-POSTapi-v1-client-logout">Logout Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-authentication-POSTapi-v1-client-forgot-password">
+                        <a href="#client-authentication-POSTapi-v1-client-forgot-password">Forgot Password Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-authentication-POSTapi-v1-client-profile-update">
+                        <a href="#client-authentication-POSTapi-v1-client-profile-update">Profile update Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-authentication-POSTapi-v1-client-store-device-token">
+                        <a href="#client-authentication-POSTapi-v1-client-store-device-token">Device Token Store Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-authentication-POSTapi-v1-client-social-login">
+                        <a href="#client-authentication-POSTapi-v1-client-social-login">Social Login Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="client-authentication-GETapi-v1-client-get-notifications">
+                        <a href="#client-authentication-GETapi-v1-client-get-notifications">Customer Notifications</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-4" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="driver-authentication">
+                    <a href="#driver-authentication">Driver Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-driver-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-register">
+                        <a href="#driver-authentication-POSTapi-v1-driver-register">Register Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-logout">
+                        <a href="#driver-authentication-POSTapi-v1-driver-logout">Logout Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-login">
+                        <a href="#driver-authentication-POSTapi-v1-driver-login">Login Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-profile-update">
+                        <a href="#driver-authentication-POSTapi-v1-driver-profile-update">Profile update Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-store-device-token">
+                        <a href="#driver-authentication-POSTapi-v1-driver-store-device-token">Device Token Store Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-change-status">
+                        <a href="#driver-authentication-POSTapi-v1-driver-change-status">Driver Status Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-save-location">
+                        <a href="#driver-authentication-POSTapi-v1-driver-save-location">Driver Location Update Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-GETapi-v1-driver-get-broadcasted-shipments">
+                        <a href="#driver-authentication-GETapi-v1-driver-get-broadcasted-shipments">Get Broadcasted shipments Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-driver-shipment-status">
+                        <a href="#driver-authentication-POSTapi-v1-driver-driver-shipment-status">Accept or Reject shipments Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-get-assigned-shipments">
+                        <a href="#driver-authentication-POSTapi-v1-driver-get-assigned-shipments">Get Driver shipments Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="driver-authentication-POSTapi-v1-driver-pickup-or-complete">
+                        <a href="#driver-authentication-POSTapi-v1-driver-pickup-or-complete">Pickup or Deliver shipments Endpoint</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-5" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="settings">
+                    <a href="#settings">Settings</a>
+                </li>
+                                    <ul id="tocify-subheader-settings" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="settings-GETapi-v1-settings">
+                        <a href="#settings-GETapi-v1-settings">Project Settings Endpoint</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-6" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="shipments">
+                    <a href="#shipments">Shipments</a>
+                </li>
+                                    <ul id="tocify-subheader-shipments" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="shipments-GETapi-v1-client-get-vehicles">
+                        <a href="#shipments-GETapi-v1-client-get-vehicles">Get Active Vehicles Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="shipments-POSTapi-v1-client-get-delivery-charges">
+                        <a href="#shipments-POSTapi-v1-client-get-delivery-charges">Calculate Delivery Charges Endpoint</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="shipments-POSTapi-v1-client-create-shipment">
+                        <a href="#shipments-POSTapi-v1-client-create-shipment">Create a new Shipment</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="shipments-GETapi-v1-client-get-shipments">
+                        <a href="#shipments-GETapi-v1-client-get-shipments">Customer Shipments</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="shipments-POSTapi-v1-client-get-shipment-by-id">
+                        <a href="#shipments-POSTapi-v1-client-get-shipment-by-id">Customer Shipment Detail</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: February 7 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://pkg2day.com</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="client-addresses">Client Addresses</h1>
+
+    <p>API endpoints for managing clients addresses</p>
+
+            <h2 id="client-addresses-POSTapi-v1-client-store-address">Add new address Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to add commonly used addresses for user.
+To add new addresses you need access_token generated by this authentication endpoints.</p>
+
+<span id="example-requests-POSTapi-v1-client-store-address">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/store-address" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"first_name\": \"John\",
+    \"last_name\": \"Panda\",
+    \"company_name\": \"Google LLC\",
+    \"street_address\": \"Jinnah Avenue near Zero Point\",
+    \"coordinates\": \"{\\\"lat\\\": \\\"57886\\\", \\\"lng\\\": \\\"23112\\\"}\",
+    \"zip_code\": 64200,
+    \"city\": \"Islamabad\",
+    \"street_address2\": \"Front of Jinnah Park\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/store-address"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "John",
+    "last_name": "Panda",
+    "company_name": "Google LLC",
+    "street_address": "Jinnah Avenue near Zero Point",
+    "coordinates": "{\"lat\": \"57886\", \"lng\": \"23112\"}",
+    "zip_code": 64200,
+    "city": "Islamabad",
+    "street_address2": "Front of Jinnah Park"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/store-address',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'first_name' =&gt; 'John',
+            'last_name' =&gt; 'Panda',
+            'company_name' =&gt; 'Google LLC',
+            'street_address' =&gt; 'Jinnah Avenue near Zero Point',
+            'coordinates' =&gt; '{"lat": "57886", "lng": "23112"}',
+            'zip_code' =&gt; 64200,
+            'city' =&gt; 'Islamabad',
+            'street_address2' =&gt; 'Front of Jinnah Park',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-store-address">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Address is created successfully!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-store-address" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-store-address"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-store-address"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-store-address" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-store-address"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-store-address" data-method="POST"
+      data-path="api/v1/client/store-address"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-store-address', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-store-address"
+                    onclick="tryItOut('POSTapi-v1-client-store-address');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-store-address"
+                    onclick="cancelTryOut('POSTapi-v1-client-store-address');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-store-address" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/store-address</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="first_name"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="John"
+               data-component="body" hidden>
+    <br>
+<p>First name of the person.</p>
+        </p>
+                <p>
+            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="last_name"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="Panda"
+               data-component="body" hidden>
+    <br>
+<p>Last name of the person.</p>
+        </p>
+                <p>
+            <b><code>company_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="company_name"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="Google LLC"
+               data-component="body" hidden>
+    <br>
+<p>Company name for address.</p>
+        </p>
+                <p>
+            <b><code>street_address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="street_address"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="Jinnah Avenue near Zero Point"
+               data-component="body" hidden>
+    <br>
+<p>Valid address with street location.</p>
+        </p>
+                <p>
+            <b><code>coordinates</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="coordinates"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="{"lat": "57886", "lng": "23112"}"
+               data-component="body" hidden>
+    <br>
+<p>Coordinates (Lat, long) of the selected address (Json array).</p>
+        </p>
+                <p>
+            <b><code>zip_code</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="zip_code"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="64200"
+               data-component="body" hidden>
+    <br>
+<p>Zip code of the mentioned town or city.</p>
+        </p>
+                <p>
+            <b><code>city</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="city"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="Islamabad"
+               data-component="body" hidden>
+    <br>
+<p>City of the mentioned address.</p>
+        </p>
+                <p>
+            <b><code>street_address2</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="street_address2"
+               data-endpoint="POSTapi-v1-client-store-address"
+               value="Front of Jinnah Park"
+               data-component="body" hidden>
+    <br>
+<p>optional Valid address with street location (Line 2).</p>
+        </p>
+        </form>
+
+            <h2 id="client-addresses-GETapi-v1-client-get-addresses">Get Customer address Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to fetch all addresses created by Client.
+To add new addresses you need access_token generated by this authentication endpoints.</p>
+
+<span id="example-requests-GETapi-v1-client-get-addresses">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://pkg2day.com/api/v1/client/get-addresses" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/get-addresses"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://pkg2day.com/api/v1/client/get-addresses',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-client-get-addresses">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Address is created successfully!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-client-get-addresses" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-client-get-addresses"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-client-get-addresses"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-client-get-addresses" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-client-get-addresses"></code></pre>
+</span>
+<form id="form-GETapi-v1-client-get-addresses" data-method="GET"
+      data-path="api/v1/client/get-addresses"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-client-get-addresses', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-client-get-addresses"
+                    onclick="tryItOut('GETapi-v1-client-get-addresses');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-client-get-addresses"
+                    onclick="cancelTryOut('GETapi-v1-client-get-addresses');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-client-get-addresses" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/client/get-addresses</code></b>
+        </p>
+                    </form>
+
+        <h1 id="client-authentication">Client Authentication</h1>
+
+    <p>API endpoints for managing clients authentication</p>
+
+            <h2 id="client-authentication-POSTapi-v1-client-register">Register Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to register client and generate token for authentication.
+Along token client details will be displayed. To call authorized endpoints you need access_token generated by this endpoint.</p>
+
+<span id="example-requests-POSTapi-v1-client-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"John Panda\",
+    \"email\": \"john@example.com\",
+    \"password\": \"secret\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "John Panda",
+    "email": "john@example.com",
+    "password": "secret"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/register',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'John Panda',
+            'email' =&gt; 'john@example.com',
+            'password' =&gt; 'secret',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-register">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;Panda&quot;,
+        &quot;email&quot;: &quot;panda@gmail.com&quot;,
+        &quot;id&quot;: 2
+    },
+    &quot;access_token&quot;: &quot;14|wiazS1DtHNXIWDToygChQD84uqU9HwVaU10nWVia&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-register"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-register"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-register" data-method="POST"
+      data-path="api/v1/client/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-register"
+                    onclick="tryItOut('POSTapi-v1-client-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-register"
+                    onclick="cancelTryOut('POSTapi-v1-client-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-register" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/register</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-v1-client-register"
+               value="John Panda"
+               data-component="body" hidden>
+    <br>
+<p>The name of the client.</p>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>email</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-client-register"
+               value="john@example.com"
+               data-component="body" hidden>
+    <br>
+<p>The valid email of the client.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-v1-client-register"
+               value="secret"
+               data-component="body" hidden>
+    <br>
+<p>The password of the client.</p>
+        </p>
+        </form>
+
+            <h2 id="client-authentication-POSTapi-v1-client-login">Login Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to generate token of client after authentication.
+Along token client details will be displayed. To call authorized endpoints you need access_token generated by this endpoint.</p>
+
+<span id="example-requests-POSTapi-v1-client-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"testuser@example.com\",
+    \"password\": \"secret\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "testuser@example.com",
+    "password": "secret"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/login',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'email' =&gt; 'testuser@example.com',
+            'password' =&gt; 'secret',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-login">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;You have successfully logged in!&quot;,
+    &quot;access_token&quot;: &quot;13|JQHbQK8QuNHCzwztR30u2ogiBxuZNSBwJhZX8sop&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;John Panda&quot;,
+        &quot;email&quot;: &quot;panda@gmail.com&quot;,
+        &quot;status&quot;: 1
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: false,
+    &quot;message&quot;: &quot;These credentials do not match our records!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-login"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-login" data-method="POST"
+      data-path="api/v1/client/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-login"
+                    onclick="tryItOut('POSTapi-v1-client-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-login"
+                    onclick="cancelTryOut('POSTapi-v1-client-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>email</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-client-login"
+               value="testuser@example.com"
+               data-component="body" hidden>
+    <br>
+<p>The valid email of the client.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-v1-client-login"
+               value="secret"
+               data-component="body" hidden>
+    <br>
+<p>The password of the client.</p>
+        </p>
+        </form>
+
+            <h2 id="client-authentication-POSTapi-v1-client-logout">Logout Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to remove client token generated for authentication to logout user.
+To logout token must be required in header otherwise client will be Unauthenticated.</p>
+
+<span id="example-requests-POSTapi-v1-client-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/logout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer $token"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer $token",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/logout',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer $token',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-logout">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;You have successfully logged out!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-logout"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-logout"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-logout" data-method="POST"
+      data-path="api/v1/client/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json","Authorization":"Bearer $token"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-logout"
+                    onclick="tryItOut('POSTapi-v1-client-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-logout"
+                    onclick="cancelTryOut('POSTapi-v1-client-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-logout" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/logout</code></b>
+        </p>
+                    </form>
+
+            <h2 id="client-authentication-POSTapi-v1-client-forgot-password">Forgot Password Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to send request for forgot password.
+To make request user must be registered with system and have a valid email. After request
+user will receive email with password reset link.</p>
+
+<span id="example-requests-POSTapi-v1-client-forgot-password">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/forgot-password" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"testuser@example.com\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/forgot-password"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "testuser@example.com"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/forgot-password',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'email' =&gt; 'testuser@example.com',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-forgot-password">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;We have e-mailed your password reset link!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: false,
+    &quot;errors&quot;: {
+        &quot;email&quot;: [
+            &quot;User with this email does not exists.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-forgot-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-forgot-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-forgot-password"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-forgot-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-forgot-password"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-forgot-password" data-method="POST"
+      data-path="api/v1/client/forgot-password"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-forgot-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-forgot-password"
+                    onclick="tryItOut('POSTapi-v1-client-forgot-password');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-forgot-password"
+                    onclick="cancelTryOut('POSTapi-v1-client-forgot-password');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-forgot-password" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/forgot-password</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>email</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-client-forgot-password"
+               value="testuser@example.com"
+               data-component="body" hidden>
+    <br>
+<p>The valid email of the client.</p>
+        </p>
+        </form>
+
+            <h2 id="client-authentication-POSTapi-v1-client-profile-update">Profile update Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to update profile of user.
+To update profile data you need access_token generated by this authentication endpoints.</p>
+
+<span id="example-requests-POSTapi-v1-client-profile-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/profile-update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"image\": \"ipsam\",
+    \"name\": \"John Panda\",
+    \"phone\": \"+91234567890\",
+    \"address\": \"Street 1, Main Block, XYZ\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/profile-update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "image": "ipsam",
+    "name": "John Panda",
+    "phone": "+91234567890",
+    "address": "Street 1, Main Block, XYZ"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/profile-update',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'image' =&gt; 'ipsam',
+            'name' =&gt; 'John Panda',
+            'phone' =&gt; '+91234567890',
+            'address' =&gt; 'Street 1, Main Block, XYZ',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-profile-update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Your profile has been updated!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-profile-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-profile-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-profile-update"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-profile-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-profile-update"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-profile-update" data-method="POST"
+      data-path="api/v1/client/profile-update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-profile-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-profile-update"
+                    onclick="tryItOut('POSTapi-v1-client-profile-update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-profile-update"
+                    onclick="cancelTryOut('POSTapi-v1-client-profile-update');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-profile-update" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/profile-update</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>image</code></b>&nbsp;&nbsp;<small>image</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="image"
+               data-endpoint="POSTapi-v1-client-profile-update"
+               value="ipsam"
+               data-component="body" hidden>
+    <br>
+<p>optional Image should be less than 2MB and contains mentioned extensions (jpeg,png,jpg)</p>
+        </p>
+                <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-v1-client-profile-update"
+               value="John Panda"
+               data-component="body" hidden>
+    <br>
+<p>optional Full name of the client.</p>
+        </p>
+                <p>
+            <b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="phone"
+               data-endpoint="POSTapi-v1-client-profile-update"
+               value="+91234567890"
+               data-component="body" hidden>
+    <br>
+<p>optional Valid phone number the client (International format).</p>
+        </p>
+                <p>
+            <b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="address"
+               data-endpoint="POSTapi-v1-client-profile-update"
+               value="Street 1, Main Block, XYZ"
+               data-component="body" hidden>
+    <br>
+<p>optional Valid full address of the client.</p>
+        </p>
+        </form>
+
+            <h2 id="client-authentication-POSTapi-v1-client-store-device-token">Device Token Store Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to store device token to send notifications to the customers.</p>
+
+<span id="example-requests-POSTapi-v1-client-store-device-token">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/store-device-token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"token\": \"quod\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/store-device-token"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "token": "quod"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/store-device-token',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'token' =&gt; 'quod',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-store-device-token">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Device token has been stored!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+      &quot;message&quot;: &quot;Unauthenticated&quot;,
+ }
+ }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-store-device-token" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-store-device-token"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-store-device-token"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-store-device-token" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-store-device-token"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-store-device-token" data-method="POST"
+      data-path="api/v1/client/store-device-token"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-store-device-token', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-store-device-token"
+                    onclick="tryItOut('POSTapi-v1-client-store-device-token');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-store-device-token"
+                    onclick="cancelTryOut('POSTapi-v1-client-store-device-token');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-store-device-token" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/store-device-token</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="token"
+               data-endpoint="POSTapi-v1-client-store-device-token"
+               value="quod"
+               data-component="body" hidden>
+    <br>
+<p>The token generated from OneSignal SDK of the client.</p>
+        </p>
+        </form>
+
+            <h2 id="client-authentication-POSTapi-v1-client-social-login">Social Login Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to authorize by social account like facebook and google.</p>
+
+<span id="example-requests-POSTapi-v1-client-social-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/social-login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"driver\": \"facebook\",
+    \"token\": \"in\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/social-login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "driver": "facebook",
+    "token": "in"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/social-login',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'driver' =&gt; 'facebook',
+            'token' =&gt; 'in',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-social-login">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;You have successfully logged in!&quot;,
+    &quot;access_token&quot;: &quot;26|Jweprv2xDC8Qfah9ystGJA8NHn8VrLfTr2PttPg2&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 6,
+        &quot;name&quot;: &quot;Sharon Alggeabdhccfj Occhinosen&quot;,
+        &quot;email&quot;: &quot;RIYJNbKp&quot;,
+        &quot;email_verified_at&quot;: null,
+        &quot;phone&quot;: null,
+        &quot;country&quot;: null,
+        &quot;city&quot;: null,
+        &quot;address&quot;: null,
+        &quot;gender&quot;: null,
+        &quot;image&quot;: null,
+        &quot;status&quot;: 1,
+        &quot;created_at&quot;: &quot;2022-01-25T18:03:50.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-01-25T18:03:50.000000Z&quot;,
+        &quot;fb_id&quot;: &quot;105785355348547&quot;,
+        &quot;google_id&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-social-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-social-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-social-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-social-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-social-login"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-social-login" data-method="POST"
+      data-path="api/v1/client/social-login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-social-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-social-login"
+                    onclick="tryItOut('POSTapi-v1-client-social-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-social-login"
+                    onclick="cancelTryOut('POSTapi-v1-client-social-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-social-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/social-login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>driver</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="driver"
+               data-endpoint="POSTapi-v1-client-social-login"
+               value="facebook"
+               data-component="body" hidden>
+    <br>
+<p>Social driver is required.</p>
+        </p>
+                <p>
+            <b><code>token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="token"
+               data-endpoint="POSTapi-v1-client-social-login"
+               value="in"
+               data-component="body" hidden>
+    <br>
+<p>Access token generated by social login SDK.</p>
+        </p>
+        </form>
+
+            <h2 id="client-authentication-GETapi-v1-client-get-notifications">Customer Notifications</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to get notification of the authenticated customer.
+To get notifications you need token from Auth end points.</p>
+
+<span id="example-requests-GETapi-v1-client-get-notifications">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://pkg2day.com/api/v1/client/get-notifications" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/get-notifications"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://pkg2day.com/api/v1/client/get-notifications',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-client-get-notifications">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Notifications found!&quot;,
+    &quot;data&quot;: {
+        &quot;message&quot;: &quot;Your shipment with Tracking# SH-PPVE1BQ has been cancelled. For reason check Shipment detaIls!&quot;,
+        &quot;notified_at&quot;: &quot;36 minutes ago&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+      &quot;message&quot;: &quot;Unauthenticated&quot;,
+ }
+ }</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-client-get-notifications" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-client-get-notifications"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-client-get-notifications"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-client-get-notifications" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-client-get-notifications"></code></pre>
+</span>
+<form id="form-GETapi-v1-client-get-notifications" data-method="GET"
+      data-path="api/v1/client/get-notifications"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-client-get-notifications', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-client-get-notifications"
+                    onclick="tryItOut('GETapi-v1-client-get-notifications');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-client-get-notifications"
+                    onclick="cancelTryOut('GETapi-v1-client-get-notifications');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-client-get-notifications" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/client/get-notifications</code></b>
+        </p>
+                    </form>
+
+        <h1 id="driver-authentication">Driver Authentication</h1>
+
+    <p>API endpoints for managing drivers authentication</p>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-register">Register Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to register driver and generate token for authentication.
+Along token driver details will be displayed. To call authorized endpoints you need access_token generated by this endpoint.</p>
+
+<span id="example-requests-POSTapi-v1-driver-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Lucy Mark\",
+    \"email\": \"lucy@example.com\",
+    \"password\": \"secret\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Lucy Mark",
+    "email": "lucy@example.com",
+    "password": "secret"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/register',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'Lucy Mark',
+            'email' =&gt; 'lucy@example.com',
+            'password' =&gt; 'secret',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-register">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;Lucy&quot;,
+        &quot;email&quot;: &quot;lucy@gmail.com&quot;,
+        &quot;id&quot;: 2
+    },
+    &quot;access_token&quot;: &quot;14|wiazS1DtHNXIWDToygChQD84uqU9HwVaU10nWVia&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-register"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-register"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-register" data-method="POST"
+      data-path="api/v1/driver/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-register"
+                    onclick="tryItOut('POSTapi-v1-driver-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-register"
+                    onclick="cancelTryOut('POSTapi-v1-driver-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-register" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/register</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-v1-driver-register"
+               value="Lucy Mark"
+               data-component="body" hidden>
+    <br>
+<p>The name of the driver.</p>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>email</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-driver-register"
+               value="lucy@example.com"
+               data-component="body" hidden>
+    <br>
+<p>The valid email of the driver.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-v1-driver-register"
+               value="secret"
+               data-component="body" hidden>
+    <br>
+<p>The password of the driver.</p>
+        </p>
+        </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-logout">Logout Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to remove driver token generated for authentication to logout user.
+To logout token must be required in header otherwise driver will be Unauthenticated.</p>
+
+<span id="example-requests-POSTapi-v1-driver-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/logout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer $token"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer $token",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/logout',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer $token',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-logout">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;You have successfully logged out!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-logout"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-logout"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-logout" data-method="POST"
+      data-path="api/v1/driver/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json","Authorization":"Bearer $token"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-logout"
+                    onclick="tryItOut('POSTapi-v1-driver-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-logout"
+                    onclick="cancelTryOut('POSTapi-v1-driver-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-logout" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/logout</code></b>
+        </p>
+                    </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-login">Login Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to generate token of driver after authentication.
+Along token driver details will be displayed. To call authorized endpoints you need access_token generated by this endpoint.</p>
+
+<span id="example-requests-POSTapi-v1-driver-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"driver@example.com\",
+    \"password\": \"secret\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "driver@example.com",
+    "password": "secret"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/login',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'email' =&gt; 'driver@example.com',
+            'password' =&gt; 'secret',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-login">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;You have successfully logged in!&quot;,
+    &quot;access_token&quot;: &quot;13|JQHbQK8QuNHCzwztR30u2ogiBxuZNSBwJhZX8sop&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;John Panda&quot;,
+        &quot;email&quot;: &quot;panda@gmail.com&quot;,
+        &quot;status&quot;: 1
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: false,
+    &quot;message&quot;: &quot;These credentials do not match our records!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: false,
+    &quot;message&quot;: &quot;Your account is not verified. Contact support!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-login"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-login" data-method="POST"
+      data-path="api/v1/driver/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-login"
+                    onclick="tryItOut('POSTapi-v1-driver-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-login"
+                    onclick="cancelTryOut('POSTapi-v1-driver-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>email</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-driver-login"
+               value="driver@example.com"
+               data-component="body" hidden>
+    <br>
+<p>The valid email of the driver.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-v1-driver-login"
+               value="secret"
+               data-component="body" hidden>
+    <br>
+<p>The password of the driver.</p>
+        </p>
+        </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-profile-update">Profile update Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to update profile of user.
+To update profile data you need access_token generated by this authentication endpoints.</p>
+
+<span id="example-requests-POSTapi-v1-driver-profile-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/profile-update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"image\": \"voluptatibus\",
+    \"name\": \"John Panda\",
+    \"phone\": \"+91234567890\",
+    \"address\": \"Street 1, Main Block, XYZ\",
+    \"city\": \"rerum\",
+    \"country\": \"magni\",
+    \"gender\": \"quo\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/profile-update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "image": "voluptatibus",
+    "name": "John Panda",
+    "phone": "+91234567890",
+    "address": "Street 1, Main Block, XYZ",
+    "city": "rerum",
+    "country": "magni",
+    "gender": "quo"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/profile-update',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'image' =&gt; 'voluptatibus',
+            'name' =&gt; 'John Panda',
+            'phone' =&gt; '+91234567890',
+            'address' =&gt; 'Street 1, Main Block, XYZ',
+            'city' =&gt; 'rerum',
+            'country' =&gt; 'magni',
+            'gender' =&gt; 'quo',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-profile-update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Your profile has been updated!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-profile-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-profile-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-profile-update"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-profile-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-profile-update"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-profile-update" data-method="POST"
+      data-path="api/v1/driver/profile-update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-profile-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-profile-update"
+                    onclick="tryItOut('POSTapi-v1-driver-profile-update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-profile-update"
+                    onclick="cancelTryOut('POSTapi-v1-driver-profile-update');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-profile-update" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/profile-update</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>image</code></b>&nbsp;&nbsp;<small>image</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="image"
+               data-endpoint="POSTapi-v1-driver-profile-update"
+               value="voluptatibus"
+               data-component="body" hidden>
+    <br>
+<p>optional Image should be less than 2MB and contains mentioned extensions (jpeg,png,jpg)</p>
+        </p>
+                <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-v1-driver-profile-update"
+               value="John Panda"
+               data-component="body" hidden>
+    <br>
+<p>optional Full name of the driver.</p>
+        </p>
+                <p>
+            <b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="phone"
+               data-endpoint="POSTapi-v1-driver-profile-update"
+               value="+91234567890"
+               data-component="body" hidden>
+    <br>
+<p>optional Valid phone number the driver (International format).</p>
+        </p>
+                <p>
+            <b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="address"
+               data-endpoint="POSTapi-v1-driver-profile-update"
+               value="Street 1, Main Block, XYZ"
+               data-component="body" hidden>
+    <br>
+<p>optional Valid full address of the driver.</p>
+        </p>
+                <p>
+            <b><code>city</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="city"
+               data-endpoint="POSTapi-v1-driver-profile-update"
+               value="rerum"
+               data-component="body" hidden>
+    <br>
+<p>optional City name of the driver</p>
+        </p>
+                <p>
+            <b><code>country</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="country"
+               data-endpoint="POSTapi-v1-driver-profile-update"
+               value="magni"
+               data-component="body" hidden>
+    <br>
+<p>optional Country name of the driver</p>
+        </p>
+                <p>
+            <b><code>gender</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="gender"
+               data-endpoint="POSTapi-v1-driver-profile-update"
+               value="quo"
+               data-component="body" hidden>
+    <br>
+<p>optional Gender of the driver</p>
+        </p>
+        </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-store-device-token">Device Token Store Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to store device token to send notifications to the drivers.</p>
+
+<span id="example-requests-POSTapi-v1-driver-store-device-token">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/store-device-token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"token\": \"voluptate\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/store-device-token"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "token": "voluptate"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/store-device-token',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'token' =&gt; 'voluptate',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-store-device-token">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Device token has been stored!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+      &quot;message&quot;: &quot;Unauthenticated&quot;,
+ }
+ }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-store-device-token" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-store-device-token"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-store-device-token"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-store-device-token" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-store-device-token"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-store-device-token" data-method="POST"
+      data-path="api/v1/driver/store-device-token"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-store-device-token', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-store-device-token"
+                    onclick="tryItOut('POSTapi-v1-driver-store-device-token');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-store-device-token"
+                    onclick="cancelTryOut('POSTapi-v1-driver-store-device-token');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-store-device-token" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/store-device-token</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="token"
+               data-endpoint="POSTapi-v1-driver-store-device-token"
+               value="voluptate"
+               data-component="body" hidden>
+    <br>
+<p>The token generated from OneSignal SDK of the driver.</p>
+        </p>
+        </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-change-status">Driver Status Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to online/offline it's availability.
+To do this need authorization token.</p>
+
+<span id="example-requests-POSTapi-v1-driver-change-status">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/change-status" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer $token" \
+    --data "{
+    \"status\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/change-status"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer $token",
+};
+
+let body = {
+    "status": true
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/change-status',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer $token',
+        ],
+        'json' =&gt; [
+            'status' =&gt; true,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-change-status">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Status has been changed!&quot;,
+    &quot;current_status&quot;: 1
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-change-status" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-change-status"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-change-status"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-change-status" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-change-status"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-change-status" data-method="POST"
+      data-path="api/v1/driver/change-status"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json","Authorization":"Bearer $token"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-change-status', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-change-status"
+                    onclick="tryItOut('POSTapi-v1-driver-change-status');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-change-status"
+                    onclick="cancelTryOut('POSTapi-v1-driver-change-status');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-change-status" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/change-status</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>status</code></b>&nbsp;&nbsp;<small>boolean</small>  &nbsp;
+                <label data-endpoint="POSTapi-v1-driver-change-status" hidden>
+            <input type="radio" name="status"
+                   value="true"
+                   data-endpoint="POSTapi-v1-driver-change-status"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-v1-driver-change-status" hidden>
+            <input type="radio" name="status"
+                   value="false"
+                   data-endpoint="POSTapi-v1-driver-change-status"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+<p>The status need be 1 when online and 0 when offline.</p>
+        </p>
+        </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-save-location">Driver Location Update Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to update driver recent location coordinates.
+To do this need authorization token.</p>
+
+<span id="example-requests-POSTapi-v1-driver-save-location">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/save-location" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer $token" \
+    --data "{
+    \"lat\": 5.693,
+    \"lng\": 25421750.97
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/save-location"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer $token",
+};
+
+let body = {
+    "lat": 5.693,
+    "lng": 25421750.97
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/save-location',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer $token',
+        ],
+        'json' =&gt; [
+            'lat' =&gt; 5.693,
+            'lng' =&gt; 25421750.97,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-save-location">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Driver location has been updated!!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-save-location" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-save-location"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-save-location"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-save-location" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-save-location"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-save-location" data-method="POST"
+      data-path="api/v1/driver/save-location"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json","Authorization":"Bearer $token"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-save-location', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-save-location"
+                    onclick="tryItOut('POSTapi-v1-driver-save-location');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-save-location"
+                    onclick="cancelTryOut('POSTapi-v1-driver-save-location');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-save-location" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/save-location</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>lat</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="lat"
+               data-endpoint="POSTapi-v1-driver-save-location"
+               value="5.693"
+               data-component="body" hidden>
+    <br>
+<p>The latitude of the current location of driver.</p>
+        </p>
+                <p>
+            <b><code>lng</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="lng"
+               data-endpoint="POSTapi-v1-driver-save-location"
+               value="25421750.97"
+               data-component="body" hidden>
+    <br>
+<p>The longitude of the current location of driver.</p>
+        </p>
+        </form>
+
+            <h2 id="driver-authentication-GETapi-v1-driver-get-broadcasted-shipments">Get Broadcasted shipments Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to fetch all shipments created near driver.</p>
+
+<span id="example-requests-GETapi-v1-driver-get-broadcasted-shipments">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://pkg2day.com/api/v1/driver/get-broadcasted-shipments" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/get-broadcasted-shipments"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://pkg2day.com/api/v1/driver/get-broadcasted-shipments',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-driver-get-broadcasted-shipments">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Address is created successfully!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-driver-get-broadcasted-shipments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-driver-get-broadcasted-shipments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-driver-get-broadcasted-shipments"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-driver-get-broadcasted-shipments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-driver-get-broadcasted-shipments"></code></pre>
+</span>
+<form id="form-GETapi-v1-driver-get-broadcasted-shipments" data-method="GET"
+      data-path="api/v1/driver/get-broadcasted-shipments"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-driver-get-broadcasted-shipments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-driver-get-broadcasted-shipments"
+                    onclick="tryItOut('GETapi-v1-driver-get-broadcasted-shipments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-driver-get-broadcasted-shipments"
+                    onclick="cancelTryOut('GETapi-v1-driver-get-broadcasted-shipments');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-driver-get-broadcasted-shipments" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/driver/get-broadcasted-shipments</code></b>
+        </p>
+                    </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-driver-shipment-status">Accept or Reject shipments Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint to accept or reject a broadcasted shipment.</p>
+
+<span id="example-requests-POSTapi-v1-driver-driver-shipment-status">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/driver-shipment-status" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"shipment_id\": 11,
+    \"status\": \"architecto\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/driver-shipment-status"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "shipment_id": 11,
+    "status": "architecto"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/driver-shipment-status',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'shipment_id' =&gt; 11,
+            'status' =&gt; 'architecto',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-driver-shipment-status">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Address is created successfully!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-driver-shipment-status" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-driver-shipment-status"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-driver-shipment-status"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-driver-shipment-status" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-driver-shipment-status"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-driver-shipment-status" data-method="POST"
+      data-path="api/v1/driver/driver-shipment-status"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-driver-shipment-status', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-driver-shipment-status"
+                    onclick="tryItOut('POSTapi-v1-driver-driver-shipment-status');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-driver-shipment-status"
+                    onclick="cancelTryOut('POSTapi-v1-driver-driver-shipment-status');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-driver-shipment-status" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/driver-shipment-status</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>shipment_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="shipment_id"
+               data-endpoint="POSTapi-v1-driver-driver-shipment-status"
+               value="11"
+               data-component="body" hidden>
+    <br>
+<p>ID of shipment.</p>
+        </p>
+                <p>
+            <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="status"
+               data-endpoint="POSTapi-v1-driver-driver-shipment-status"
+               value="architecto"
+               data-component="body" hidden>
+    <br>
+<p>The status of the shipment by driver.</p>
+        </p>
+        </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-get-assigned-shipments">Get Driver shipments Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to fetch all shipments created near driver.</p>
+
+<span id="example-requests-POSTapi-v1-driver-get-assigned-shipments">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/get-assigned-shipments" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/get-assigned-shipments"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/get-assigned-shipments',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-get-assigned-shipments">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Address is created successfully!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-get-assigned-shipments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-get-assigned-shipments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-get-assigned-shipments"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-get-assigned-shipments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-get-assigned-shipments"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-get-assigned-shipments" data-method="POST"
+      data-path="api/v1/driver/get-assigned-shipments"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-get-assigned-shipments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-get-assigned-shipments"
+                    onclick="tryItOut('POSTapi-v1-driver-get-assigned-shipments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-get-assigned-shipments"
+                    onclick="cancelTryOut('POSTapi-v1-driver-get-assigned-shipments');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-get-assigned-shipments" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/get-assigned-shipments</code></b>
+        </p>
+                    </form>
+
+            <h2 id="driver-authentication-POSTapi-v1-driver-pickup-or-complete">Pickup or Deliver shipments Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint to accept or reject a broadcasted shipment.</p>
+
+<span id="example-requests-POSTapi-v1-driver-pickup-or-complete">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/driver/pickup-or-complete" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"shipment_id\": 8,
+    \"status\": \"ut\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/driver/pickup-or-complete"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "shipment_id": 8,
+    "status": "ut"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/driver/pickup-or-complete',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'shipment_id' =&gt; 8,
+            'status' =&gt; 'ut',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-driver-pickup-or-complete">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: true,
+     &quot;message&quot;: &quot;Address is created successfully!&quot;,
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-driver-pickup-or-complete" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-driver-pickup-or-complete"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-driver-pickup-or-complete"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-driver-pickup-or-complete" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-driver-pickup-or-complete"></code></pre>
+</span>
+<form id="form-POSTapi-v1-driver-pickup-or-complete" data-method="POST"
+      data-path="api/v1/driver/pickup-or-complete"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-driver-pickup-or-complete', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-driver-pickup-or-complete"
+                    onclick="tryItOut('POSTapi-v1-driver-pickup-or-complete');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-driver-pickup-or-complete"
+                    onclick="cancelTryOut('POSTapi-v1-driver-pickup-or-complete');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-driver-pickup-or-complete" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/driver/pickup-or-complete</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>shipment_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="shipment_id"
+               data-endpoint="POSTapi-v1-driver-pickup-or-complete"
+               value="8"
+               data-component="body" hidden>
+    <br>
+<p>ID of shipment.</p>
+        </p>
+                <p>
+            <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="status"
+               data-endpoint="POSTapi-v1-driver-pickup-or-complete"
+               value="ut"
+               data-component="body" hidden>
+    <br>
+<p>The status of the shipment by driver (picked_up, completed).</p>
+        </p>
+        </form>
+
+        <h1 id="settings">Settings</h1>
+
+    <p>API endpoints for fetching settings.</p>
+
+            <h2 id="settings-GETapi-v1-settings">Project Settings Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to get default settings of the project.</p>
+
+<span id="example-requests-GETapi-v1-settings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://pkg2day.com/api/v1/settings" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/settings"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://pkg2day.com/api/v1/settings',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-settings">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Driver location has been updated!!&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-settings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-settings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-settings"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-settings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-settings"></code></pre>
+</span>
+<form id="form-GETapi-v1-settings" data-method="GET"
+      data-path="api/v1/settings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-settings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-settings"
+                    onclick="tryItOut('GETapi-v1-settings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-settings"
+                    onclick="cancelTryOut('GETapi-v1-settings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-settings" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/settings</code></b>
+        </p>
+                    </form>
+
+        <h1 id="shipments">Shipments</h1>
+
+    <p>API endpoints for managing shipments controls</p>
+
+            <h2 id="shipments-GETapi-v1-client-get-vehicles">Get Active Vehicles Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to get active vehicles along their charges.
+To get active vehicles you need access_token generated by this authentication endpoints.</p>
+
+<span id="example-requests-GETapi-v1-client-get-vehicles">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://pkg2day.com/api/v1/client/get-vehicles" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/get-vehicles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://pkg2day.com/api/v1/client/get-vehicles',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-client-get-vehicles">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;vehicles&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;reg_no&quot;: &quot;KAI-1534312&quot;,
+            &quot;name&quot;: &quot;Nissan&quot;,
+            &quot;image&quot;: null,
+            &quot;fixed_charges&quot;: 12,
+            &quot;over_time_charges&quot;: 10,
+            &quot;over_range_charges_type&quot;: &quot;distance_wise&quot;,
+            &quot;over_range_charges&quot;: 10,
+            &quot;working_hours&quot;: {
+                &quot;id&quot;: 1,
+                &quot;vehicle_id&quot;: 1,
+                &quot;sunday&quot;: 1,
+                &quot;sunday_open&quot;: &quot;00:00:00&quot;,
+                &quot;sunday_close&quot;: &quot;06:25:00&quot;,
+                &quot;monday&quot;: 1,
+                &quot;monday_open&quot;: &quot;00:00:00&quot;,
+                &quot;monday_close&quot;: &quot;23:59:00&quot;,
+                &quot;tuesday&quot;: 0,
+                &quot;tuesday_open&quot;: &quot;00:00:00&quot;,
+                &quot;tuesday_close&quot;: &quot;22:00:00&quot;,
+                &quot;wednesday&quot;: 0,
+                &quot;wednesday_open&quot;: &quot;00:00:00&quot;,
+                &quot;wednesday_close&quot;: &quot;23:59:00&quot;,
+                &quot;thursday&quot;: 0,
+                &quot;thursday_open&quot;: &quot;00:00:00&quot;,
+                &quot;thursday_close&quot;: &quot;23:59:00&quot;,
+                &quot;friday&quot;: 1,
+                &quot;friday_open&quot;: &quot;00:00:00&quot;,
+                &quot;friday_close&quot;: &quot;23:59:00&quot;,
+                &quot;saturday&quot;: 1,
+                &quot;saturday_open&quot;: &quot;00:00:00&quot;,
+                &quot;saturday_close&quot;: &quot;23:59:00&quot;
+            }
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+     &quot;status&quot;: false,
+     &quot;vehicles&quot;: null,
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-client-get-vehicles" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-client-get-vehicles"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-client-get-vehicles"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-client-get-vehicles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-client-get-vehicles"></code></pre>
+</span>
+<form id="form-GETapi-v1-client-get-vehicles" data-method="GET"
+      data-path="api/v1/client/get-vehicles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-client-get-vehicles', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-client-get-vehicles"
+                    onclick="tryItOut('GETapi-v1-client-get-vehicles');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-client-get-vehicles"
+                    onclick="cancelTryOut('GETapi-v1-client-get-vehicles');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-client-get-vehicles" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/client/get-vehicles</code></b>
+        </p>
+                    </form>
+
+            <h2 id="shipments-POSTapi-v1-client-get-delivery-charges">Calculate Delivery Charges Endpoint</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to calculate charges base on vehicle and user addresses.
+To call authorized endpoints you need access_token generated by authentication endpoints.</p>
+
+<span id="example-requests-POSTapi-v1-client-get-delivery-charges">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/get-delivery-charges" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_id\": 3,
+    \"pickup_address\": 2,
+    \"drop_address\": 20
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/get-delivery-charges"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_id": 3,
+    "pickup_address": 2,
+    "drop_address": 20
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/get-delivery-charges',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'vehicle_id' =&gt; 3,
+            'pickup_address' =&gt; 2,
+            'drop_address' =&gt; 20,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-get-delivery-charges">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Charges has been calculated&quot;,
+    &quot;vehicle_charges&quot;: {
+        &quot;fixed_charges&quot;: &quot;12.00&quot;,
+        &quot;overtime_charges&quot;: 0,
+        &quot;over_range_charges&quot;: 0
+    },
+    &quot;delivery_charges&quot;: {
+        &quot;one_day_delivery_charges&quot;: &quot;262.30&quot;,
+        &quot;two_days_delivery_charges&quot;: &quot;131.15&quot;,
+        &quot;three_days_delivery_charges&quot;: &quot;20.00&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-get-delivery-charges" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-get-delivery-charges"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-get-delivery-charges"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-get-delivery-charges" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-get-delivery-charges"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-get-delivery-charges" data-method="POST"
+      data-path="api/v1/client/get-delivery-charges"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-get-delivery-charges', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-get-delivery-charges"
+                    onclick="tryItOut('POSTapi-v1-client-get-delivery-charges');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-get-delivery-charges"
+                    onclick="cancelTryOut('POSTapi-v1-client-get-delivery-charges');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-get-delivery-charges" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/get-delivery-charges</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>vehicle_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="vehicle_id"
+               data-endpoint="POSTapi-v1-client-get-delivery-charges"
+               value="3"
+               data-component="body" hidden>
+    <br>
+<p>The id of the selected vehicle by the client.</p>
+        </p>
+                <p>
+            <b><code>pickup_address</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="pickup_address"
+               data-endpoint="POSTapi-v1-client-get-delivery-charges"
+               value="2"
+               data-component="body" hidden>
+    <br>
+<p>The id of the pickup address.</p>
+        </p>
+                <p>
+            <b><code>drop_address</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="drop_address"
+               data-endpoint="POSTapi-v1-client-get-delivery-charges"
+               value="20"
+               data-component="body" hidden>
+    <br>
+<p>The id of the drop address.</p>
+        </p>
+        </form>
+
+            <h2 id="shipments-POSTapi-v1-client-create-shipment">Create a new Shipment</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to create a new shipment against the logged in user. This endpoint contains Address, Charges and Payment method details.
+To call authorized endpoints you need access_token generated by authentication endpoints.</p>
+
+<span id="example-requests-POSTapi-v1-client-create-shipment">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/create-shipment" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_id\": 7,
+    \"pickup_address\": 17,
+    \"drop_address\": 14,
+    \"payment_method\": \"laboriosam\",
+    \"charges\": {
+        \"distance\": 12,
+        \"delivery_charges\": 1000,
+        \"vehicle_charges\": {
+            \"fixed_charges\": \"12.00\",
+            \"overtime_charges\": 0,
+            \"over_range_charges\": 0
+        }
+    },
+    \"total_amount\": 19
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/create-shipment"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_id": 7,
+    "pickup_address": 17,
+    "drop_address": 14,
+    "payment_method": "laboriosam",
+    "charges": {
+        "distance": 12,
+        "delivery_charges": 1000,
+        "vehicle_charges": {
+            "fixed_charges": "12.00",
+            "overtime_charges": 0,
+            "over_range_charges": 0
+        }
+    },
+    "total_amount": 19
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/create-shipment',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+            $o = [
+                clone (($p = &amp;\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['stdClass'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('stdClass')),
+                clone $p['stdClass'],
+            ],
+            null,
+            [
+                'stdClass' =&gt; [
+                    'distance' =&gt; [
+                        12,
+                    ],
+                    'delivery_charges' =&gt; [
+                        1000,
+                    ],
+                    'vehicle_charges' =&gt; [
+                        $o[1],
+                    ],
+                    'fixed_charges' =&gt; [
+                        1 =&gt; '12.00',
+                    ],
+                    'overtime_charges' =&gt; [
+                        1 =&gt; 0,
+                    ],
+                    'over_range_charges' =&gt; [
+                        1 =&gt; 0,
+                    ],
+                ],
+            ],
+            [
+                'vehicle_id' =&gt; 7,
+                'pickup_address' =&gt; 17,
+                'drop_address' =&gt; 14,
+                'payment_method' =&gt; 'laboriosam',
+                'charges' =&gt; $o[0],
+                'total_amount' =&gt; 19,
+            ],
+            []
+        ),
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-create-shipment">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+      &quot;status&quot;: true,
+      &quot;message&quot;: &quot;Your shipment has been initiated successfully. You will be informed further!&quot;,
+      &quot;tracking_no&quot;: SH-HAHY24HS
+
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-create-shipment" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-create-shipment"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-create-shipment"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-create-shipment" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-create-shipment"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-create-shipment" data-method="POST"
+      data-path="api/v1/client/create-shipment"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-create-shipment', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-create-shipment"
+                    onclick="tryItOut('POSTapi-v1-client-create-shipment');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-create-shipment"
+                    onclick="cancelTryOut('POSTapi-v1-client-create-shipment');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-create-shipment" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/create-shipment</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>vehicle_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="vehicle_id"
+               data-endpoint="POSTapi-v1-client-create-shipment"
+               value="7"
+               data-component="body" hidden>
+    <br>
+<p>The id of the selected vehicle by the client.</p>
+        </p>
+                <p>
+            <b><code>pickup_address</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="pickup_address"
+               data-endpoint="POSTapi-v1-client-create-shipment"
+               value="17"
+               data-component="body" hidden>
+    <br>
+<p>The id of the pickup address.</p>
+        </p>
+                <p>
+            <b><code>drop_address</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="drop_address"
+               data-endpoint="POSTapi-v1-client-create-shipment"
+               value="14"
+               data-component="body" hidden>
+    <br>
+<p>The id of the drop address.</p>
+        </p>
+                <p>
+            <b><code>payment_method</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="payment_method"
+               data-endpoint="POSTapi-v1-client-create-shipment"
+               value="laboriosam"
+               data-component="body" hidden>
+    <br>
+<p>The payment method (cash or card).</p>
+        </p>
+                <p>
+            <b><code>charges</code></b>&nbsp;&nbsp;<small>string[]</small>  &nbsp;
+                <input type="text"
+               name="charges.0"
+               data-endpoint="POSTapi-v1-client-create-shipment"
+               data-component="body" hidden>
+        <input type="text"
+               name="charges.1"
+               data-endpoint="POSTapi-v1-client-create-shipment"
+               data-component="body" hidden>
+    <br>
+<p>The array of the charges applied on shipment.</p>
+        </p>
+                <p>
+            <b><code>total_amount</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="total_amount"
+               data-endpoint="POSTapi-v1-client-create-shipment"
+               value="19"
+               data-component="body" hidden>
+    <br>
+<p>The total amount of the shipment including charges.</p>
+        </p>
+        </form>
+
+            <h2 id="shipments-GETapi-v1-client-get-shipments">Customer Shipments</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to get shipments against the logged in user.
+To call authorized endpoints you need access_token generated by authentication endpoints.</p>
+
+<span id="example-requests-GETapi-v1-client-get-shipments">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://pkg2day.com/api/v1/client/get-shipments" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/get-shipments"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://pkg2day.com/api/v1/client/get-shipments',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-client-get-shipments">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+      &quot;status&quot;: true,
+      &quot;message&quot;: &quot;Data fetched!&quot;,
+      &quot;shipments&quot;: [
+  {
+      &quot;id&quot;: 8,
+      &quot;tracking_no&quot;: &quot;SH-5AXEZAO&quot;,
+      &quot;customer_id&quot;: 5,
+      &quot;vehicle_id&quot;: 1,
+      &quot;pickup_address&quot;: 1,
+      &quot;drop_address&quot;: 1,
+      &quot;distance&quot;: 12,
+      &quot;total_amount&quot;: 12.2,
+     &quot;payment_method&quot;: &quot;cash&quot;,
+      &quot;payment_status&quot;: 0,
+      &quot;status&quot;: &quot;Pending&quot;,
+      &quot;shipment_date_time&quot;: &quot;2022-01-23 17:29:01&quot;,
+      &quot;delivered_date_time&quot;: null,
+      &quot;created_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;,
+      &quot;updated_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;,
+      &quot;customer&quot;: {
+          &quot;id&quot;: 5,
+          &quot;name&quot;: &quot;John Panda&quot;,
+          &quot;email&quot;: &quot;john@example.com&quot;,
+          &quot;email_verified_at&quot;: null,
+          &quot;phone&quot;: null,
+          &quot;country&quot;: null,
+          &quot;city&quot;: null,
+          &quot;address&quot;: null,
+          &quot;gender&quot;: null,
+          &quot;image&quot;: null,
+          &quot;status&quot;: 1,
+          &quot;created_at&quot;: &quot;2022-01-15T12:57:05.000000Z&quot;,
+          &quot;updated_at&quot;: &quot;2022-01-15T12:57:05.000000Z&quot;
+      },
+      &quot;vehicle&quot;: {
+          &quot;id&quot;: 1,
+          &quot;reg_no&quot;: &quot;KAI-1534312&quot;,
+          &quot;name&quot;: &quot;Nissan&quot;,
+          &quot;image&quot;: null,
+          &quot;fixed_charges&quot;: 12,
+          &quot;over_time_charges&quot;: 10,
+          &quot;over_range_charges_type&quot;: &quot;distance_wise&quot;,
+          &quot;over_range_charges&quot;: 10,
+          &quot;status&quot;: true,
+          &quot;created_at&quot;: &quot;2022-01-10T15:23:25.000000Z&quot;,
+          &quot;updated_at&quot;: &quot;2022-01-16T18:38:52.000000Z&quot;
+      },
+      &quot;pickup_location&quot;: {
+         &quot;id&quot;: 1,
+         &quot;customer_id&quot;: 5,
+         &quot;first_name&quot;: &quot;John&quot;,
+          &quot;last_name&quot;: &quot;Panda&quot;,
+          &quot;company_name&quot;: &quot;Google LLC&quot;,
+          &quot;street_address&quot;: &quot;Jinnah Avenue near Zero Point&quot;,
+          &quot;street_address2&quot;: &quot;Front of Jinnah Park&quot;,
+          &quot;city&quot;: &quot;Islamabad&quot;,
+          &quot;zip_code&quot;: 64200,
+          &quot;created_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+          &quot;updated_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+          &quot;coordinates&quot;: &quot;{\&quot;lat\&quot;:\&quot;28.4212\&quot;,\&quot;lng\&quot;:\&quot;70.2989\&quot;}&quot;
+      },
+      &quot;drop_location&quot;: {
+          &quot;id&quot;: 1,
+          &quot;customer_id&quot;: 5,
+          &quot;first_name&quot;: &quot;John&quot;,
+          &quot;last_name&quot;: &quot;Panda&quot;,
+          &quot;company_name&quot;: &quot;Google LLC&quot;,
+          &quot;street_address&quot;: &quot;Jinnah Avenue near Zero Point&quot;,
+          &quot;street_address2&quot;: &quot;Front of Jinnah Park&quot;,
+          &quot;city&quot;: &quot;Islamabad&quot;,
+          &quot;zip_code&quot;: 64200,
+          &quot;created_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+          &quot;updated_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+          &quot;coordinates&quot;: &quot;{\&quot;lat\&quot;:\&quot;28.4212\&quot;,\&quot;lng\&quot;:\&quot;70.2989\&quot;}&quot;
+      },
+      &quot;shipment_charges&quot;: {
+          &quot;id&quot;: 3,
+          &quot;shipment_id&quot;: 8,
+          &quot;delivery_charges&quot;: 1000,
+          &quot;vehicle_fixed_charges&quot;: 12,
+          &quot;vehicle_overtime_charges&quot;: 0,
+          &quot;vehicle_over_range_charges&quot;: 0,
+          &quot;created_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;,
+          &quot;updated_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;
+      }
+  }
+
+  }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-client-get-shipments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-client-get-shipments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-client-get-shipments"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-client-get-shipments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-client-get-shipments"></code></pre>
+</span>
+<form id="form-GETapi-v1-client-get-shipments" data-method="GET"
+      data-path="api/v1/client/get-shipments"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-client-get-shipments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-client-get-shipments"
+                    onclick="tryItOut('GETapi-v1-client-get-shipments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-client-get-shipments"
+                    onclick="cancelTryOut('GETapi-v1-client-get-shipments');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-client-get-shipments" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/client/get-shipments</code></b>
+        </p>
+                    </form>
+
+            <h2 id="shipments-POSTapi-v1-client-get-shipment-by-id">Customer Shipment Detail</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to get shipment detail against the shipment id.
+To call authorized endpoints you need access_token generated by authentication endpoints.</p>
+
+<span id="example-requests-POSTapi-v1-client-get-shipment-by-id">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://pkg2day.com/api/v1/client/get-shipment-by-id" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"shipment_id\": 5
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://pkg2day.com/api/v1/client/get-shipment-by-id"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "shipment_id": 5
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://pkg2day.com/api/v1/client/get-shipment-by-id',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'shipment_id' =&gt; 5,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-client-get-shipment-by-id">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Data fetched!&quot;,
+    &quot;shipment&quot;: {
+        &quot;id&quot;: 8,
+        &quot;tracking_no&quot;: &quot;SH-5AXEZAO&quot;,
+        &quot;customer_id&quot;: 5,
+        &quot;vehicle_id&quot;: 1,
+        &quot;pickup_address&quot;: 1,
+        &quot;drop_address&quot;: 1,
+        &quot;distance&quot;: 12,
+        &quot;total_amount&quot;: 12.2,
+        &quot;payment_method&quot;: &quot;cash&quot;,
+        &quot;payment_status&quot;: 0,
+        &quot;status&quot;: &quot;Pending&quot;,
+        &quot;shipment_date_time&quot;: &quot;2022-01-23 17:29:01&quot;,
+        &quot;delivered_date_time&quot;: null,
+        &quot;created_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;,
+        &quot;customer&quot;: {
+            &quot;id&quot;: 5,
+            &quot;name&quot;: &quot;John Panda&quot;,
+            &quot;email&quot;: &quot;john@example.com&quot;,
+            &quot;email_verified_at&quot;: null,
+            &quot;phone&quot;: null,
+            &quot;country&quot;: null,
+            &quot;city&quot;: null,
+            &quot;address&quot;: null,
+            &quot;gender&quot;: null,
+            &quot;image&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: &quot;2022-01-15T12:57:05.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-01-15T12:57:05.000000Z&quot;
+        },
+        &quot;vehicle&quot;: {
+            &quot;id&quot;: 1,
+            &quot;reg_no&quot;: &quot;KAI-1534312&quot;,
+            &quot;name&quot;: &quot;Nissan&quot;,
+            &quot;image&quot;: null,
+            &quot;fixed_charges&quot;: 12,
+            &quot;over_time_charges&quot;: 10,
+            &quot;over_range_charges_type&quot;: &quot;distance_wise&quot;,
+            &quot;over_range_charges&quot;: 10,
+            &quot;status&quot;: true,
+            &quot;created_at&quot;: &quot;2022-01-10T15:23:25.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-01-16T18:38:52.000000Z&quot;
+        },
+        &quot;pickup_location&quot;: {
+            &quot;id&quot;: 1,
+            &quot;customer_id&quot;: 5,
+            &quot;first_name&quot;: &quot;John&quot;,
+            &quot;last_name&quot;: &quot;Panda&quot;,
+            &quot;company_name&quot;: &quot;Google LLC&quot;,
+            &quot;street_address&quot;: &quot;Jinnah Avenue near Zero Point&quot;,
+            &quot;street_address2&quot;: &quot;Front of Jinnah Park&quot;,
+            &quot;city&quot;: &quot;Islamabad&quot;,
+            &quot;zip_code&quot;: 64200,
+            &quot;created_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+            &quot;coordinates&quot;: &quot;{\&quot;lat\&quot;:\&quot;28.4212\&quot;,\&quot;lng\&quot;:\&quot;70.2989\&quot;}&quot;
+        },
+        &quot;drop_location&quot;: {
+            &quot;id&quot;: 1,
+            &quot;customer_id&quot;: 5,
+            &quot;first_name&quot;: &quot;John&quot;,
+            &quot;last_name&quot;: &quot;Panda&quot;,
+            &quot;company_name&quot;: &quot;Google LLC&quot;,
+            &quot;street_address&quot;: &quot;Jinnah Avenue near Zero Point&quot;,
+            &quot;street_address2&quot;: &quot;Front of Jinnah Park&quot;,
+            &quot;city&quot;: &quot;Islamabad&quot;,
+            &quot;zip_code&quot;: 64200,
+            &quot;created_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-01-15T12:59:05.000000Z&quot;,
+            &quot;coordinates&quot;: &quot;{\&quot;lat\&quot;:\&quot;28.4212\&quot;,\&quot;lng\&quot;:\&quot;70.2989\&quot;}&quot;
+        },
+        &quot;shipment_charges&quot;: {
+            &quot;id&quot;: 3,
+            &quot;shipment_id&quot;: 8,
+            &quot;delivery_charges&quot;: 1000,
+            &quot;vehicle_fixed_charges&quot;: 12,
+            &quot;vehicle_overtime_charges&quot;: 0,
+            &quot;vehicle_over_range_charges&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-01-22T14:22:30.000000Z&quot;
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-client-get-shipment-by-id" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-client-get-shipment-by-id"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-client-get-shipment-by-id"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-client-get-shipment-by-id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-client-get-shipment-by-id"></code></pre>
+</span>
+<form id="form-POSTapi-v1-client-get-shipment-by-id" data-method="POST"
+      data-path="api/v1/client/get-shipment-by-id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-client-get-shipment-by-id', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-client-get-shipment-by-id"
+                    onclick="tryItOut('POSTapi-v1-client-get-shipment-by-id');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-client-get-shipment-by-id"
+                    onclick="cancelTryOut('POSTapi-v1-client-get-shipment-by-id');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-client-get-shipment-by-id" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/client/get-shipment-by-id</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>shipment_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="shipment_id"
+               data-endpoint="POSTapi-v1-client-get-shipment-by-id"
+               value="5"
+               data-component="body" hidden>
+    <br>
+<p>The id of the selected shipment by the client.</p>
+        </p>
+        </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+
+/*
+==========================================
+11. service
+==========================================
+*/
+
+.service{
+    margin-bottom: 90px;
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    @include transition(.3s);
+    &__icon{
+        border-radius: 25px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+    &:hover i{
+        color: $lightblue;
+    }
+    &:hover {
+        color: $lightblue;
+    }
+    &__content{
+        & h4{
+            font-weight: 600;
+            @include mq(md){
+                font-size: 18px;
+            }
+        }
+    }
+    @include mq(xs){
+        margin-bottom: 50px;
+        padding: 0;
+    }
+    @include mq(sm){
+            margin-bottom: 30px;
+            border-radius: 6px;
+            background-color: white;
+            position: relative;
+            padding: 20px 60px;
+    }
+}
+.purches_heading {
+	padding-bottom: 13px;
+	font-size: 36px;
+	line-height: 46px;
+
+}
+.service_page {
+	text-align: left;
+	margin-bottom: 50px;
+}
+.servicepageIcon {
+	margin-bottom: 32px;
+    text-align: center;
+    @include transition(.3s);
+}
+.servicecontent{
+    & h4{
+        padding-bottom: 10px;
+        @include transition(.3s);
+    }
+}
+.tab-area{
+    position: relative;
+}
+.sbg1 {
+	border-radius: 20px;
+	background-color: rgb(253, 17, 250, 0.141);
+}
+.sbg2 {
+	border-radius: 20px;
+    background-color: rgb(23, 183, 220,0.122);
+}
+.sbg3 {
+	border-radius: 20px;
+    background-color: rgb(252, 6, 23,0.141);
+}
+.sbg4 {
+    background-color: rgb(34, 114, 204,0.141);
+	border-radius: 20px;
+}
+.sbg5 {
+	border-radius: 20px;
+    background-color: rgb(51, 203, 63,0.141);
+}
+.sbg6 {
+	border-radius: 20px;
+    background-color: rgb(253, 191, 22,0.141);
+}
+.service-padding{
+    padding-bottom: 10px;
+}
+
+.tab-menu button {
+    margin: 0;
+    padding: 16px;
+    text-align: left;
+    font-size: 18px;
+    @include transition(.3s);
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 30px 50px 0px rgba(6, 6, 6, 0.08);
+    margin-bottom: 22px;
+
+  }
+  .tab-menu button i {
+    padding-right: 17px;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 30px 50px 0px rgba(6, 6, 6, 0.08);
+    color: #ff4f5a;
+    @include transition(.3s);
+}
+.tab_content {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.bigshape {
+    position: absolute;
+    right: 342px;
+    max-width: inherit;
+    top: 194px;
+    z-index: -1;
+    animation: pulse 2s infinite;
+    @include mq(lg){
+        right: 0;
+    }
+    @include mq(xl){
+        right: 0;
+    }
+  }
+  .mobilesmall {
+    position: absolute;
+    right: 626px;
+    top: 96px;
+    @include mq(lg){
+        right: 50px;
+    }
+    @include mq(xl){
+        right: 50px;
+    }
+  }
+  .mobilebig {
+	position: absolute;
+	top: 164px;
+	right: 422px;
+	z-index: 2;
+    @include mq(lg){
+        top: 200px;
+        right: 156px;
+    }
+    @include mq(xl){
+        top: 200px;
+        right: 156px;
+    }
+}
+.service_page:hover .servicepageIcon {
+	transform: translateY(-5px);
+	@include transition(.3s);
+}
+.service_page:hover .servicecontent h4 {
+    color: $lightblue;
+    @include transition(.3s);
+}
+.tab-area.pt-180.mb-200 {
+	@include mq(xs){
+        padding-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+.p-custom-rel {
+    @include mq(xl) {
+        position: relative;
+    }
+    @include mq(lg) {
+        position: relative;
+    }
+}

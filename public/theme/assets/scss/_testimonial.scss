@@ -1,0 +1,421 @@
+/*
+==========================================
+5. testimonial
+==========================================
+*/
+
+/*
+=============================
+HOME PAGE 1 TESTIMONIAL DESIGN
+=============================
+*/
+.testimonial-area.bg1 {
+	background: transparent;
+    @include mq(md){
+        padding-top: 50px;
+    }
+}
+.testimonial-area{
+    position: relative;
+    & h2{
+        font-size: 36px;
+        text-align: center;
+        font-weight: 600;
+        line-height: 46px;
+        @include mq(xs){
+            font-size: 25px;
+            line-height: 1.4;
+        }
+    }
+    & p{
+        font-size: 18px;
+        line-height: 28px;
+        color: #000;
+        @include mq(xs){
+            font-size: 16px;
+        }
+        @include mq(md){
+            font-size: 16px;
+        }
+    }
+}
+
+.item {
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(19, 35, 57, 0.1);
+    padding: 43px 30px;
+    @include mq(xs){
+        box-shadow: none;
+        padding-right: 0;
+        padding-top: 25px;
+    }
+}
+.testimonial-item {
+	margin-bottom: 3px;
+	margin-top: 7px;
+    @include mq(xs){
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+.clients_meta {
+    display: flex;
+    & h4{
+        font-size: 18px;
+        line-height: 10px;
+        font-weight: 600;
+        color: $body-text-color;
+    }
+    & span{
+        font-size: 16px;
+        color: $body-text-color;
+    }
+}
+
+.clients_info {
+    margin-left: 20px;
+    margin-top: 14px;
+    @include mq(md){
+    margin-left: 0;
+    margin-top: 14px;
+    color: #fff;
+    }
+    
+.t-1 {
+    padding-left: 231px;
+    position: absolute;
+    top: 236px;
+}
+.t-2 {
+    position: absolute;
+    top: 679px;
+    right: 49px;
+}
+.testimonial-item {
+    padding-top: 55px;
+    @include mq(xs){
+        padding-top: 10px;
+    }
+}
+.testimonial-area.bg1.pt-110 {
+    @include mq(xs){
+    padding-top: 60px;
+    }
+}
+.clients_info h4 {
+    font-weight: 600;
+}
+//slick dots
+.tp-dot-style {
+    & .slick-dots {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 16px 0;
+        list-style-type: none;
+        margin-top: 52px;
+            & li {
+                margin: 0 0.5rem;
+                &  button {
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    padding: 0;    
+                    border: none;
+                    border-radius: 100%;
+                    text-indent: -9999px;
+                    background: #cfd3da;
+                    border: 1px solid transparent;
+                    position: relative;
+                    &:before{
+                        position: absolute;
+                        content: "";
+                        height: 20px;
+                        width: 20px;
+                        display: inline-table;
+                        border-radius: 50%;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        border: 1px solid #19cb55;
+                        opacity: 0;
+                        transition: .3s;
+                    }
+                }
+            }
+            & li.slick-active button {
+                background-color: #19cb55;
+                position: relative;
+                &:before{
+                    opacity: 1;
+                }
+            }
+            @include mq(xs){
+                margin-top: 0px;
+            }
+    }
+}
+}
+/*
+=============================
+HOME PAGE 2 TESTIMONIAL DESIGN
+=============================
+*/
+.testimonial-area{
+    background-image: linear-gradient( 180deg, rgb(0,194,238) 1%, rgb(60,143,246) 66%, rgb(119,91,253) 100%);
+    @include mq(xs){
+        padding-top: 76px;
+        padding-bottom: 110px;
+    }
+    @include mq(md){
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
+}
+.testimonial2_content {
+	padding-top: 18%;
+	margin-left: 25%;
+	color: #fff;
+    & p{
+        color: #fff;
+    }
+    @include mq(xs){
+        margin-left: 5px;
+    }
+}
+.testimonial2_meta{
+    & h4{
+        color: #fff;
+    }
+    & span{
+        color: #fff;
+    }
+}
+.testimonial2{
+    position: relative;
+}
+.items{
+    & p{
+        color: #fff;
+        position: relative;
+        &::before {
+            position: absolute;
+            left: 0;
+            top: -20px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 43px;
+            height: 35px;
+            background-image: url('../img/quote.png');
+            content: "";
+        }
+    }
+}
+.clients_info.info2{
+    margin-left: 0px;
+    padding-top: 24px;
+    padding-bottom: 21px;
+    & h4{
+        color: #fff;
+        @include mq(xs){
+            font-size: 21px;
+        }
+    }
+    & span{
+        opacity: .7;
+    }
+}
+
+/*
+=============================
+HOME PAGE 3 TESTIMONIAL DESIGN
+=============================
+*/
+.testimonialh3{
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 6px 0px rgba(19, 35, 57, 0.1);
+    position: relative;
+    padding: 35px 0;
+    margin: 35px 0px;
+    &__image{
+        display: inline-block;
+    }
+}
+
+.testimonial2 .slick-prev, 
+.testimonial2 .slick-next{
+	cursor: pointer;
+	position: absolute;
+	z-index: 2;
+	background: transparent;
+	border: 0;
+	color: #fff;
+	font-size: 20px;
+	left: 115px;
+	text-align: left;
+	bottom: -40px;
+    @include mq(xs){
+        left: 87px;
+    }
+    @include mq(sm){
+        left: 113px;
+    }
+}
+.testimonial2 .slick-next {
+    left: 159px;
+    text-align: left;
+    @include mq(xs){
+        left: 130px;
+    }
+    @include mq(sm){
+        left: 165px;
+    }
+}
+
+
+.testimonialh3__content{
+    & h3{
+        font-size: 20px;
+        line-height: 34px;
+        padding-top: 22px;
+        margin-bottom: 17px;
+        position: relative;
+        &::before{
+            position: absolute;
+            top: 5px;
+            left: 162px;
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 400;
+            content: "";
+            font-size: 24px;
+            color: $themeblue;
+            opacity: .3;
+            @include mq(xs){
+                left: 10px;
+            }
+            @include mq(md){
+                left: 10px;
+            }
+        }
+        @include mq(xs){
+            font-size: 15px;
+            line-height: 1.4;
+        }
+        @include mq(md){
+            font-size: 16px;
+            line-height: 1.7;
+        }
+    }
+    & h4{
+        font-size: 18px;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+    }
+}
+.items {
+	@include mq(md){
+        padding-left: 168px;
+        padding-top: 110px;
+    }
+}
+.clients_image {
+	@include mq(md){
+        padding-bottom: 26px;
+    }
+}
+.testimonialh3_active .slick-prev, 
+.testimonialh3_active .slick-next {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 48px;
+    border: 1px solid $themeblue;
+    color: $themeblue;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -90px;
+    z-index: 2;
+    border-radius: 50%;
+    background: transparent;
+    @include mq(xs){
+        top: 100%;
+        left: 25%;
+    }
+    @include mq(md){
+        left: -65px; 
+    }
+    @include mq(lg){
+        left: 10px; 
+    }
+    @include mq(xl){
+        left: 36px; 
+    }
+}
+.testimonialh3_active .slick-next {
+    right: -90px;
+    left: auto;
+    @include mq(xs){
+        right: 37%;
+        top: 100%;
+    }
+    @include mq(md){
+        right: -42px; 
+    }
+    @include mq(lg){
+        right: 10px; 
+    }
+    @include mq(xl){
+        right: 36px; 
+    }
+}
+.testimonialh3_active .slick-prev:hover,
+.testimonialh3_active .slick-next:hover {
+    color: #fff;
+    background:$themeblue;
+    border: transparent;
+}
+
+.testimonial1_h2 {
+    position: absolute;
+    top: 59%;
+    left: 15%;
+  }
+  .testimonial2_h2 {
+    position: absolute;
+    right: 220px;
+    top: 40%;
+  }
+.testimonial_h3.pt-110 {
+	@include mq(xs){
+        padding-top: 0;
+        margin-bottom: 90px;
+    }
+}
+.testimonial-area.bg1.pt-110 {
+	@include mq(xs){
+        padding-top: 20px;
+    }
+}
+
+.clients_info-two {
+	padding-left: 43px;
+	padding-top: 18px;
+    @include mq(xs){
+        padding-left: 14px;
+    }
+}
+.clients_image img {
+	max-width: inherit;
+}
+
+.testimonial-active .col-xl-4 {
+    padding: 0 15px;
+}
